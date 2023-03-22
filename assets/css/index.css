@@ -1,0 +1,67 @@
+main{
+    display: flex;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: var(--azul);
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    display: flex;
+
+    flex-direction: column;
+}
+
+h1 span{
+    color: var(--vermelho);
+
+    text-align: center;
+    letter-spacing: 5px;
+
+    padding: 0;
+}
+
+h1 span:first-child{
+    font-size: 12rem;
+
+    line-height: 10rem;
+}
+
+h1 span:last-child{
+    font-size: 9rem;
+
+    line-height: 8rem;
+}
+
+button{
+    height: 80px;
+    width: 200px;
+
+    background-color: var(--vermelho);
+
+    color: var(--azul);
+    font-size: 3rem;
+    
+    letter-spacing: 2px;
+
+    border: none;
+    border-radius: 50px;
+
+    margin-top: 80px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button a{
+    height: fit-content;
+    width: fit-content;
+
+    text-decoration: none;
+}

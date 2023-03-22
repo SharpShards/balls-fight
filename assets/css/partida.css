@@ -1,0 +1,740 @@
+@keyframes levitar{
+    0%{
+        transform: translateY(-20px);
+    }
+
+    50%{
+        transform: translateY(60px);
+    }
+
+    100%{
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes dano{
+    0%{
+        transform: translateY(0) scale(1) skew(0);
+    }
+
+    25%{
+        transform: translateY(0) scale(1.4) skewX(20deg);
+    }
+
+    50%{
+        transform: translateY(0) scale(0.8) skewX(-30deg);
+    }
+
+    75%{
+        transform: translateY(0) scale(1.2) skewX(30deg);
+    }
+
+    100%{
+        transform: translateY(0) scale(1) skew(0);
+    }
+}
+
+@keyframes ladoAzul{
+    0%{
+        opacity: 0;
+        left: 0;        
+    }
+
+    50%{
+        opacity: 1;
+        left: 25%;
+    }
+
+    100%{
+        opacity: 0;
+        left: 50%;
+    }
+}
+
+@keyframes ladoVer{
+    0%{
+        opacity: 0;
+        right: 0;        
+    }
+
+    50%{
+        opacity: 1;
+        right: 25%;
+    }
+
+    100%{
+        opacity: 0;
+        right: 50%;
+    }
+}
+
+main{
+    display: flex;
+
+    height: 100vh;
+    width: 100%;
+
+    background-image: linear-gradient(to right, var(--vermelho), var(--azul));
+
+    position: relative;
+
+    overflow: hidden;
+
+    flex-direction: column;
+}
+
+#sctBarras{
+    display: flex;
+
+    height: 120px;
+
+    padding: 10px;
+}
+
+#sctBarras .dvVs{
+    display: flex;
+
+    width: 60px;
+
+    color: var(--branco);
+    font-size: 5rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctBarras .dvPerson{
+    flex: 1;
+    display: flex;
+
+    align-items: center;
+}
+
+#sctBarras .dvPerson:first-child{
+    justify-content: start;
+}
+
+#sctBarras .dvPerson:last-child{
+    justify-content: end;
+    flex-direction: row-reverse;
+}
+
+#sctBarras .dvPerson .dvFoto{
+    display: flex;
+
+    height: 100px;
+    width: 100px;
+
+    background-color: var(--cinza);
+
+    border-radius: 50%;
+
+    z-index: 2;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctBarras .dvPerson .dvFoto .dvImagem{
+    height: 80%;
+    width: 80%;
+
+    border-radius: 50%;
+}
+
+#sctBarras .dvPerson:first-child .dvFoto .dvImagem{
+    background-color: var(--azul);
+}
+
+#sctBarras .dvPerson:last-child .dvFoto .dvImagem{
+    background-color: var(--vermelho);
+}
+
+#sctBarras .dvPerson .dvInfos{
+    flex: 1;
+}
+
+#sctBarras .dvPerson:last-child .dvInfos{
+    display: flex;
+
+    flex-direction: column;
+    align-items: end;
+}
+
+#sctBarras .dvPerson .dvInfos .dvNome{
+    color: var(--branco);
+    font-size: 2.4rem;
+}
+
+#sctBarras .dvPerson .dvInfos .dvBarra{
+    display: flex;
+
+    height: 40px;
+    width: 400px;
+
+    background-color: var(--cinza);
+
+    padding: 5px;
+}
+
+#sctBarras .dvPerson:first-child .dvInfos .dvBarra{
+    margin-left: -15px;
+
+    transform: skewX(20deg);
+
+    justify-content: start;
+}
+
+#sctBarras .dvPerson:last-child .dvInfos .dvBarra{
+    margin-right: -15px;
+
+    transform: skewX(-20deg);
+
+    justify-content: end;
+}
+
+#sctBarras .dvPerson .dvInfos .dvBarra .dvLiquido{
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--verde);
+
+    transition: width 250ms linear;
+}
+
+#sctBarras .dvPerson .dvInfos .dvQuant{
+    color: var(--branco);
+    font-size: 2rem;
+}
+
+#sctLuta{
+    flex: 1;
+
+    padding: 40px;
+}
+
+#sctLuta #dvBonecos{
+    display: flex;
+
+    height: 60%;
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-left: 60px;
+    padding-right: 60px;    
+}
+
+#sctLuta #dvBonecos .dvBoneco{
+    display: flex;
+
+    height: 200px;
+    width: 200px;
+
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+
+    animation-name: levitar;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#sctLuta #dvBonecos .dvBoneco:first-child{
+    background-color: var(--azul);
+}
+
+#sctLuta #dvBonecos .dvBoneco:last-child{
+    background-color: var(--vermelho);
+}
+
+#sctLuta #dvBonecos .dvGuia{
+    display: flex;
+
+    height: 100%;
+    width: 400px;
+
+    position: relative;
+    
+    align-items: center;
+}
+
+#sctLuta #dvBonecos .dvGuia div{
+    display: flex;
+
+    height: 100px;
+    width: 260px;
+
+    color: var(--branco);
+    font-size: 3rem;
+
+    border-radius: 24px;
+
+    opacity: 0;
+
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctLuta #dvBonecos .dvGuia .dvAzul{
+    background-color: var(--azul);
+
+    transform: skewX(-20deg);
+}
+
+#sctLuta #dvBonecos .dvGuia .dvVer{
+    background-color: var(--vermelho);
+
+    transform: skewX(20deg);
+}
+
+#sctLuta #dvDetalhes{
+    display: flex;
+
+    height: 40%;
+    width: 700px;
+
+    background-color: var(--cinza);
+
+    border-radius: 12px;
+
+    margin-inline: auto;
+
+    padding: 20px;
+
+    position: relative;
+
+    flex-direction: column;
+}
+
+#sctLuta #dvDetalhes div{
+    display: flex;
+
+    height: 70%;
+    width: 100%;
+
+    padding-bottom: 20px;
+
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#sctLuta #dvDetalhes div p{
+    width: fit-content;
+    
+    color: var(--branco);
+    font-size: 2rem;
+    
+    letter-spacing: 2px;
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+#sctLuta #dvDetalhes div p:hover{
+    cursor: pointer;
+
+    color: var(--cinza);
+    
+    background-color: var(--azul);
+}
+
+#sctLuta #dvDetalhes button{
+    height: fit-content;
+    width: fit-content;
+
+    background-color: var(--azul);
+
+    color: var(--cinza);
+    font-size: 2rem;
+
+    border: 0px;
+    border-radius: 30px;
+    
+    margin-inline: auto;
+    
+    padding: 20px 40px;
+}
+
+#sctLuta #dvDetalhes button:hover{
+    cursor: pointer;
+}
+
+#sctLuta #dvDetalhes .dvBloqueio{
+    display: none;
+    
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    border-radius: 12px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#sctResult{
+    display: none;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    position: absolute;
+    top: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctResult .dvFundo{
+    display: flex;
+
+    height: fit-content;
+
+    background-color: var(--cinza);
+
+    border-radius: 24px;
+
+    padding: 60px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sctResult .dvFundo h1{
+    color: var(--azul);
+    font-size: 5rem;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 80px;
+}
+
+#sctResult .dvFundo .dvFundoIcon{
+    display: flex;
+
+    height: fit-content;
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sctResult .dvFundo .dvFundoIcon .dvIcon{
+    display: flex;
+
+    height: 80px;
+    width: 80px;
+
+    background-color: var(--azul);
+
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctResult .dvFundo .dvFundoIcon .dvIcon:first-child img{
+    height: 70px;
+}
+
+#sctResult .dvFundo .dvFundoIcon .dvIcon:last-child img{
+    height: 70%;
+}
+
+#sctResult .dvFundo .dvFundoIcon .dvIcon:hover{
+    cursor: pointer;
+}
+
+#imgConfig{
+    height: 80px;
+    width: 80px;
+
+    background-image: url('../images/icons/config.png');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+}
+
+#imgConfig:hover{
+    cursor: pointer;
+}
+
+#sctConfig{
+    display: none;
+
+    height: 100vh;
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    position: absolute;
+    top: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctConfig .dvFundo{
+    height: fit-content;
+    width: fit-content;
+
+    background-color: var(--cinza);
+
+    border-radius: 24px;
+
+    position: relative;
+
+    padding: 40px;
+}
+
+#sctConfig h1{
+    color: var(--branco);
+    font-size: 4rem;
+
+    letter-spacing: 5px;
+
+    padding-bottom: 80px;
+    padding-top: 60px;
+}
+
+#sctConfig .dvX{
+    height: 50px;
+    width: 50px;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#sctConfig .dvX:hover{
+    cursor: pointer;
+}
+
+#sctConfig .dvFundoIcon{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sctConfig .dvFundoIcon .dvIcon{
+    display: flex;
+
+    height: 80px;
+    width: 80px;
+
+    background-color: var(--azul);
+
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+#sctConfig .dvFundoIcon .dvIcon:first-child a{
+    height: 80%;
+}
+
+#sctConfig .dvFundoIcon .dvIcon:first-child a img{
+    height: 100%;
+}
+
+#sctConfig .dvFundoIcon .dvIcon:last-child img{
+    height: 60%;
+}
+
+#sctConfig .dvFundoIcon .dvIcon:hover{
+    cursor: pointer;
+}
+
+@media(max-width: 1220px){
+    #sctBarras{     
+        height: 40vh;
+
+        flex-direction: column;
+    }
+
+    #sctBarras .dvVs{
+        width: 100%;
+
+        font-size: 3rem;
+    }
+
+    #sctBarras .dvPerson .dvFoto{
+        height: 80px;
+        width: 80px;
+    }
+
+    #sctBarras .dvPerson .dvInfos .dvNome{
+        font-size: 2rem;
+    }
+
+    #sctBarras .dvPerson .dvInfos .dvBarra{
+        height: 30px;
+        width: 300px;
+    }
+
+    #sctBarras .dvPerson{
+        justify-content: center !important;
+    }
+
+    #sctBarras .dvPerson .dvInfos{
+        flex: 0;
+
+        width: fit-content;
+    }
+
+    #sctLuta{
+        height: 60vh;
+
+        padding: 0;
+    }
+
+    #sctLuta #dvBonecos{
+        height: 100%;
+
+        align-items: center;
+
+        padding-bottom: 20px;
+    }
+
+    #sctLuta #dvBonecos .dvGuia div{
+        height: 80px;
+        width: 200px;
+
+        font-size: 2rem;
+    }
+
+    #sctLuta #dvDetalhes{
+        height: 120px;
+        width: 100%;
+
+        border-radius: 0;
+
+        overflow-y: hidden;
+        
+        opacity: 1;
+
+        position: absolute;
+        bottom: 0px;
+
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #sctLuta #dvDetalhes div{
+        padding-bottom: 0;
+        padding-left: 80px;
+    }
+
+    #imgConfig{
+        height: 60px;
+        width: 60px;
+
+        background-color: var(--azul);
+        border-radius: 50%;
+
+        left: 20px;
+        bottom: 20px;
+    }
+}
+
+@media(max-width: 950px){
+    #sctLuta #dvBonecos{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #sctLuta #dvBonecos .dvBoneco{
+        height: 160px;
+        width: 160px;
+    }
+
+    #sctLuta #dvBonecos .dvGuia{
+        display: none;
+    }
+
+    #sctLuta #dvDetalhes{
+        height: fit-content;
+
+        flex-direction: column;
+    }
+
+    #sctLuta #dvDetalhes div{
+        margin-bottom: 40px;
+
+        padding: 0;
+
+        flex-direction: column;
+    }
+
+    #sctResult .dvFundo h1{
+        text-align: center;
+    }
+}
+
+@media(max-width: 420px){
+    #sctBarras .dvPerson .dvFoto{
+        height: 60px;
+        width: 60px;
+    }
+
+    #sctBarras .dvPerson .dvInfos .dvNome,
+    #sctBarras .dvPerson .dvInfos .dvQuant{
+        font-size: 1.6rem;
+        letter-spacing: 2px;
+    }
+
+    #sctBarras .dvPerson .dvInfos .dvBarra{
+        width: 200px;
+    }
+
+    #sctBarras .dvVs{
+        font-size: 2.4rem;
+    }
+
+    #sctLuta #dvBonecos .dvBoneco{
+        height: 120px;
+        width: 120px;
+    }
+
+    #sctLuta #dvDetalhes div{
+        margin-bottom: 100px;
+    }
+
+    #sctLuta #dvDetalhes button{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    #sctConfig .dvX{
+        right: 40px;
+    }
+
+    #sctConfig h1{
+        font-size: 3.4rem;
+    }
+
+    #sctConfig .dvFundoIcon{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

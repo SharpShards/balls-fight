@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Balls Fight</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../assets/css/padrao.css">
+    <link rel="stylesheet" href="../assets/css/partida.css">
+    <link rel="icon" href="../assets/images/client/logo.png">
+    
+    <script src="../assets/js/classes.js" defer></script>
+    <script src="../assets/js/eventos.js" defer></script>
+</head>
+<body onload="carregarPag()">
+    <main>
+        <section id="sctBarras">
+            <div class="dvPerson">
+                <div class="dvFoto">
+                    <div class="dvImagem"></div>
+                </div>
+
+                <div class="dvInfos">
+                    <div class="dvNome">
+                        <h1>---</h1>
+                    </div>
+
+                    <div class="dvBarra">
+                        <div class="dvLiquido"></div>
+                    </div>
+
+                    <div class="dvQuant">
+                        <p>0000/0000</p>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="dvVs">
+                <p>Vs</p>
+            </div>
+
+            <div class="dvPerson">
+                <div class="dvFoto">
+                    <div class="dvImagem"></div>
+                </div>
+
+                <div class="dvInfos">
+                    <div class="dvNome">
+                        <h1>---</h1>
+                    </div>
+
+                    <div class="dvBarra">
+                        <div class="dvLiquido"></div>
+                    </div>
+
+                    <div class="dvQuant">
+                        <p>0000/0000</p>
+                    </div>
+                </div>                
+            </div>
+        </section>
+
+        <section id="sctLuta">
+            <div id="dvBonecos">
+                <div class="dvBoneco"></div>
+
+                <div class="dvGuia">
+                    <div class="dvAzul">Azul Ataca!</div>
+                    <div class="dvVer">Vermelho Ataca!</div>
+                </div>
+
+                <div class="dvBoneco"></div>
+            </div>
+
+            <div id="dvDetalhes">
+                <div>
+                    <p>Tiro Certeiro</p>
+                    <p>Bomba Dinâmica</p>
+                    <p>Mina Terrestre</p>
+                </div>
+
+                <button>Atacar!</button>
+
+                <div class="dvBloqueio"></div>
+            </div>
+        </section>
+
+        <section id="sctResult">
+            <div class="dvFundo">
+                <h1>Você Perdeu!!!</h1>
+                
+                <div class="dvFundoIcon">
+                    <div class="dvIcon">
+                        <a href="../index.html"><img src="../assets/images/icons/home.png" alt="Home"></a>
+                    </div>
+                    <div class="dvIcon">
+                        <img src="../assets/images/icons/reiniciar.png" alt="Recomeçar">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="imgConfig"></div>
+
+        <section id="sctConfig">
+            <div class="dvFundo">
+                <img class="dvX" src="../assets/images/icons/cancelar.png" alt="X">
+
+                <h1>Configurações</h1>
+
+                <div class="dvFundoIcon">
+                    <div class="dvIcon">
+                        <a href="../index.html"><img src="../assets/images/icons/home.png" alt="Home"></a>
+                    </div>
+                    <div class="dvIcon">
+                        <img src="../assets/images/icons/reiniciar.png" alt="Recomeçar">
+                    </div>
+                </div>                
+            </div>
+        </section>
+    </main>    
+</body>
+</html>
