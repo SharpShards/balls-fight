@@ -65,3 +65,24 @@ button a{
 
     text-decoration: none;
 }
+
+#dvCreditos{
+    display: flex;
+    display: none;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #000;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#dvCreditos img{
+    width: 200px;
+}
